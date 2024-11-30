@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// Here we import our pages
 import HomePage from "./pages/HomePage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
-
 import NavBar from "./components/NavBar.jsx";
 
+// Here we import our components
+
+// Here we create our router and tell it whats pages to render at what path
 const router = createBrowserRouter([
+    // These are the three routes!
   {
       path: "/",
       element: <NavBar />,

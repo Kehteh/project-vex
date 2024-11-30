@@ -7,6 +7,7 @@ function NavBar() {
         <Link to="/">Home</Link>
         <Link to="/project">Project</Link>
       </nav>
+      {/* React Router will pass components into the <Outlet /> based on the path */}
       <Outlet />
     </div>
   );
