@@ -35,8 +35,8 @@ function LoginForm() {
                 token: response.token,
             });            
             navigate("/");
-           });
-       }
+        });
+    }
    };
 
     return (
