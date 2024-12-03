@@ -44,12 +44,6 @@ function LoginForm() {
         <div>
           <label htmlFor="username">Username:</label>
           <input type="text" id="username" placeholder="Enter username" />               
-          <input
-                   type="text"
-                   id="username"
-                   placeholder="Enter username"
-                   onChange={handleChange}
-               />
             </div>
             <div>
               <label htmlFor="password">Password:</label>
@@ -67,4 +61,4 @@ function LoginForm() {
     )
 };
 
-  export default LoginForm;
+export default LoginForm;
