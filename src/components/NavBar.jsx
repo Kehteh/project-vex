@@ -14,14 +14,13 @@ function NavBar() {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link>
-        {auth.token ? (
+        <Link to="/">Home</Link> 
+        <Link to="/">Launchpad</Link>
+        <Link to="/login">Login</Link>
         <Link to="/" onClick={handleLogout}>
         Log Out
         </Link>
-        ) : (
-        <Link to="/login">Login</Link>
-        )}
+
       </nav>
       {/* React Router will pass components into the <Outlet /> based on the path */}
       <Outlet />
