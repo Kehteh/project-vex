@@ -1,16 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
-import postLogin from "../api/post-login.js";
+import postProject from "../api/post-project.js";
 import useAuth from "../hooks/use-auth.js";
 
 import { useState } from "react";
 
 function LaunchpadForm() { 
     const [projectDetails, setProjectDetails] = useState({
-      projectName: "",
+      title: "",
       description: "",
-      startDate: "",
-      endDate: "",
+      goal: "",
 });
   
     const handleChange = (event) => {
@@ -23,26 +22,27 @@ function LaunchpadForm() {
   
     const handleSubmit = (event) => {
       event.preventDefault();
+      postProject(projectDetails.description, projectDetails.title, projectDetails.goal)
       console.log("Project Created:", projectDetails);
       // Add your form submission logic here
     };
 
 
     return (
-      <form>
+      <form onSubmit={handleSubmit} >
         <div>
           <label htmlFor="title">Project Title:</label>
-          <input type="text" id="title" placeholder="Enter Title of your Project" />
+          <input type="text" id="title" placeholder="Enter Title of your Project" onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="description">Description:</label>
-          <input type="description" id="description" placeholder="Description" />
+          <input type="description" id="description" placeholder="Description" onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="goal">Goal:</label>
-          <input type="goal" id="goal" placeholder="Goal" />
+          <input type="goal" id="goal" placeholder="Goal" onChange={handleChange} />
         </div>
-        <button  onSubmit={handleSubmit} type="create">Create</button>
+        <button type="submit">Launch</button>
       </form>
     );
   }
