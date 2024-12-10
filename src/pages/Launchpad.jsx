@@ -1,5 +1,4 @@
-import CreateProject from "../components/CreateProject";
-import ProjectCard from "../components/ProjectCard";
+import CreateProject from "../components/LaunchpadForm";
 import "./Launchpad.css";
 
 function Launchpad() {

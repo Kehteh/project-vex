@@ -15,7 +15,7 @@ function NavBar() {
     <div>
       <nav>
         <Link to="/">Home</Link> 
-        <Link to="/">Launchpad</Link>
+        <Link to="/Launchpad">Launchpad</Link>
         <Link to="/login">Login</Link>
         <Link to="/" onClick={handleLogout}>
         Log Out
