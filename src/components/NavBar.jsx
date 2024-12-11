@@ -16,7 +16,7 @@ function NavBar() {
       <nav>
         <Link to="/">Home</Link> 
         <Link to="/Launchpad">Launchpad</Link>
-        <Link to="/login">Login</Link>
+        {auth.token ? <Link to ="/logout">logout</Link> : <Link to="/login">Login</Link>}
         <Link to="/" onClick={handleLogout}>
         Log Out
         </Link>

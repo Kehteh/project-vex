@@ -10,7 +10,10 @@ function LaunchpadForm() {
       title: "",
       description: "",
       goal: "",
+    
 });
+
+    const {auth, setAuth} = useAuth() 
   
     const handleChange = (event) => {
       const { id, value } = event.target;
