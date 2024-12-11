@@ -16,10 +16,14 @@ function NavBar() {
       <nav>
         <Link to="/">Home</Link> 
         <Link to="/Launchpad">Launchpad</Link>
-        {auth.token ? <Link to ="/logout">logout</Link> : <Link to="/login">Login</Link>}
-        <Link to="/" onClick={handleLogout}>
-        Log Out
-        </Link>
+        {auth.token ? (
+            <Link to="/" onClick={handleLogout}>
+              Log Out
+            </Link> 
+            ) : ( 
+            <Link to="/login">Login</Link>
+          )}
+
 
       </nav>
       {/* React Router will pass components into the <Outlet /> based on the path */}
