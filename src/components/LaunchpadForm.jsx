@@ -25,7 +25,7 @@ function LaunchpadForm() {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      postProject(projectDetails.description, projectDetails.title, projectDetails.goal)
+      postProject(auth.token, projectDetails.description, projectDetails.title, projectDetails.goal)
       console.log("Project Created:", projectDetails);
       // Add your form submission logic here
     };
