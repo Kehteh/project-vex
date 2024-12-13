@@ -1,4 +1,4 @@
-async function postProject(token, title, description, goal) {
+async function postProject(token, title, description, goal, image) {
     const url = `${import.meta.env.VITE_API_URL}/project/`;
     const response = await fetch(url, {
       method: "POST", // We need to tell the server that we are sending JSON data so we set the Content-Type header to application/json
@@ -10,7 +10,7 @@ async function postProject(token, title, description, goal) {
         "title": title,
         "description": description,
         "goal": goal,
-        // "image": image,
+        "image": image,
         "is_open": true
       }),
     });

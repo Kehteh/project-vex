@@ -8,6 +8,8 @@ import ProjectPage from "./pages/ProjectPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import Launchpad from "./pages/Launchpad.jsx";
 
+import NotFound from './components/NotFound.jsx';
+
 import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
 
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
           { path: "/login", element: <LoginPage /> },
           { path: "/project/:id", element: <ProjectPage /> },
           { path: "/launchpad", element: <Launchpad /> },
+          { path: "*", element: <NotFound/>}
           
       ],
   },

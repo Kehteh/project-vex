@@ -10,6 +10,7 @@ function LaunchpadForm() {
       title: "",
       description: "",
       goal: "",
+      image: ""
     
 });
 
@@ -25,7 +26,7 @@ function LaunchpadForm() {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      postProject(auth.token, projectDetails.description, projectDetails.title, projectDetails.goal)
+      postProject(auth.token, projectDetails.description, projectDetails.title, projectDetails.goal, projectDetails.image)
       console.log("Project Created:", projectDetails);
       // Add your form submission logic here
     };
@@ -44,6 +45,10 @@ function LaunchpadForm() {
         <div>
           <label htmlFor="goal">Goal:</label>
           <input type="goal" id="goal" placeholder="Goal" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="image">Image:</label>
+          <input type="url" id="image" placeholder="Image" onChange={handleChange} />
         </div>
         <button type="submit">Launch</button>
       </form>
