@@ -1,7 +1,7 @@
 // NotFound.js
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from './lotties/Dino404';
+import animationData from '../lotties/Dino404.json';
 
 export default function NotFound() {
     const defaultOptions = {
