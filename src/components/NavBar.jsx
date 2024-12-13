@@ -21,7 +21,14 @@ function NavBar() {
               Log Out
             </Link> 
             ) : ( 
-            <Link to="/login">Login</Link>
+          <>
+            <Link to="/login">
+              Login
+            </Link>
+            <Link to="/signup">
+              Create an Account
+            </Link>
+          </>
           )}
 
 

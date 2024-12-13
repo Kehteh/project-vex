@@ -1,5 +1,5 @@
 import CreateProject from "../components/LaunchpadForm";
-import "./Launchpad.css";
+import "./styles/Launchpad.css";
 
 function Launchpad() {
   return <CreateProject />;

@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import Launchpad from "./pages/Launchpad.jsx";
+import CreateAccount from "./pages/CreateAccount.jsx";
 
 import NotFound from './components/NotFound.jsx';
 
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
           { path: "/login", element: <LoginPage /> },
           { path: "/project/:id", element: <ProjectPage /> },
           { path: "/launchpad", element: <Launchpad /> },
+          { path: "/signup", element: <CreateAccount /> },
+
           { path: "*", element: <NotFound/>}
           
       ],
