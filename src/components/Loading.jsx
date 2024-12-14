@@ -1,16 +1,20 @@
 import React from "react";
-import { Player } from "@lottie-react/lottie-react";
+import Lottie from "react-lottie";
 import animationData from '../lotties/LoadingStars.json';
 
 const Loading = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div className="loading-container">
-      <Player
-        autoplay
-        loop
-        src={loadingAnimation}
-        style={{ height: "200px", width: "200px" }}
-      />
+      <Lottie options={defaultOptions} height={200} width={200} />
       <p>Loading...</p>
     </div>
   );

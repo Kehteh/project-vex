@@ -1,7 +1,6 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import React, { Suspense, lazy } from "react";
 
 // Import pages and components
 // Lazy-load pages
