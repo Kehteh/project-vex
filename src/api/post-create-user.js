@@ -4,7 +4,7 @@ async function postCreateUser(username = "", password = "", email = "") {
     throw new Error("Username, password, and email are required.");
   }
 
-  const url = `${import.meta.env.VITE_API_URL}/project/`;
+  const url = `${import.meta.env.VITE_API_URL}/users/`;
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 5000); // 5-second timeout
 
