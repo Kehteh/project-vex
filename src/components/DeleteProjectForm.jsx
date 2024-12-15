@@ -40,7 +40,7 @@ function DeleteProjectForm() {
 
     return (
         <div>
-            <h2>Delete Project</h2>
+            <h2>Delete a Campaign</h2>
             <form onSubmit={handleDelete}>
                 <div>
                     <label htmlFor="projectId">Project ID</label>

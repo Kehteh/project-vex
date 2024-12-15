@@ -1,11 +1,9 @@
-import { useNavigate } from "react-router-dom";
-
-import postProject from "../api/post-project.js";
+import putProject from "../api/put-project.js";
 import useAuth from "../hooks/use-auth.js";
 
 import { useState } from "react";
 
-function LaunchpadForm() { 
+function UpdateProjectForm() { 
     const [projectDetails, setProjectDetails] = useState({
       title: "",
       description: "",
@@ -35,7 +33,7 @@ function LaunchpadForm() {
     return (
       <form onSubmit={handleSubmit} >
         <div>
-          <h2>Launch a Campaign</h2>
+          <h2>Update a Campaign</h2>
           
           <label htmlFor="title">Project Title:</label>
           <input type="text" id="title" placeholder="Enter Title of your Project" onChange={handleChange} />
@@ -52,9 +50,9 @@ function LaunchpadForm() {
           <label htmlFor="image">Image:</label>
           <input type="url" id="image" placeholder="Image" onChange={handleChange} />
         </div>
-        <button type="submit">Launch</button>
+        <button type="submit">Relaunch</button>
       </form>
     );
   }
   
-  export default LaunchpadForm;
+  export default UpdateProjectForm;
