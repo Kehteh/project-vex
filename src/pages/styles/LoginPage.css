@@ -1,1 +1,72 @@
+/* Base HTML Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Rubik:ital,wght@0,400;0,700;1,400&display=swap");
 
+:root {
+    --brand: #E80000;
+    --action: #FFC0BF;
+    --white: #ffffff;
+    --base-light: #ff9ce1;
+    --base-dark: #570004;
+    --black: #111111;
+  }
+
+/* CSS Reset */
+  html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rubik", sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Utilities */
+
+.display-none {
+  display: none;
+}
