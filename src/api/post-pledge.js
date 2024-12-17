@@ -1,4 +1,4 @@
-async function postPledge(token, name, message, amount) {
+async function postPledge(token, name, message, amount, anonymous) {
     const url = `${import.meta.env.VITE_API_URL}/pledge/`;
 
     const response = await fetch(url, {
@@ -8,9 +8,10 @@ async function postPledge(token, name, message, amount) {
             "Authorization": `Token ${token}`, // Include the token for authorization
         },
         body: JSON.stringify({
-            name,
-            message,
-            amount,
+            "name": name,
+            "message": message,
+            "amount": amount,
+            
         }),
     });
 
