@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import postPledge from "../api/post-pledge.js";
 import usePledge from "../hooks/use-pledge.js";
+import useAuth from "../hooks/use-auth.js";
 
-function PledgeForm({ user }) {
+function PledgeForm() {
+  const { user } = useAuth();
   const [amount, setAmount] = useState("");
   const [isAnonymous, setIsAnonymous] = useState(false);
   const { submitPledge, isSubmitting, error } = usePledge(user);
