@@ -9,6 +9,7 @@ const ProjectPage = lazy(() => import("./pages/ProjectPage.jsx"));
 const LoginPage = lazy(() => import("./pages/LoginPage.jsx"));
 const Launchpad = lazy(() => import("./pages/Launchpad.jsx"));
 const CreateAccount = lazy(() => import("./pages/CreateAccount.jsx"));
+const PledgePage = lazy(() => import("./pages/PledgePage.jsx"));
 
 // import HomePage from "./pages/HomePage.jsx";
 // import ProjectPage from "./pages/ProjectPage.jsx";
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/launchpad", element: <Launchpad /> },
       { path: "/signup", element: <CreateAccount /> },
+      { path: "/pledge", element: <PledgePage />},
       { path: "*", element: <NotFound /> },
     ],
   },

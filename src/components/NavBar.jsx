@@ -1,6 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../hooks/use-auth.js";
-import "navbar.css";
 
 function NavBar() {
   const {auth, setAuth} = useAuth();
@@ -15,7 +14,8 @@ function NavBar() {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link> 
+        <Link to="/">Home</Link>
+        <Link to="/Pledge">Pledge</Link> 
         <Link to="/Launchpad">Launchpad</Link>
         {auth.token ? (
             <Link to="/" onClick={handleLogout}>

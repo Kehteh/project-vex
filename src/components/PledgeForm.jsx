@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import usePledge from "./usePledge";
+import postPledge from "../api/post-pledge.js";
+import usePledge from "../hooks/use-pledge.js";
 
 function PledgeForm({ user }) {
   const [amount, setAmount] = useState("");

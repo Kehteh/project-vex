@@ -1,4 +1,3 @@
-import usePledge from "../hooks/use-pledge";
 import PledgeForm from "../components/PledgeForm.jsx";
 
 function PledgePage() {
