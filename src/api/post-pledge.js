@@ -15,7 +15,7 @@ async function postPledge(token, name, message, amount) {
     });
 
     if (!response.ok) {
-        const fallbackError = "Error trying to create new project";
+        const fallbackError = "Error trying to pledge";
 
         // Attempt to parse the error response; fallback to a generic error message
         const data = await response.json().catch(() => {
