@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
 import PledgeForm from "../components/PledgeForm";
+import 'styles.css';
+
 
 function ProjectPage() {
 
