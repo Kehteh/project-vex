@@ -32,21 +32,21 @@ function UpdateProjectForm() {
 
     return (
       <form onSubmit={handleSubmit} >
-        <div>
+        <div class = "formcontainer">
           <h2>Update a Campaign</h2>
           
           <label htmlFor="title">Project Title:</label>
           <input type="text" id="title" placeholder="Enter Title of your Project" onChange={handleChange} />
         </div>
-        <div>
+        <div class = "formcontainer">
           <label htmlFor="description">Description:</label>
           <input type="description" id="description" placeholder="Description" onChange={handleChange} />
         </div>
-        <div>
+        <div class = "formcontainer">
           <label htmlFor="goal">Goal:</label>
           <input type="goal" id="goal" placeholder="Goal" onChange={handleChange} />
         </div>
-        <div>
+        <div class = "formcontainer">
           <label htmlFor="image">Image:</label>
           <input type="url" id="image" placeholder="Image" onChange={handleChange} />
         </div>

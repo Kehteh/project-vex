@@ -39,10 +39,10 @@ function DeleteProjectForm() {
     };
 
     return (
-        <div>
+        <div class = "formcontainer">
             <h2>Delete a Campaign</h2>
             <form onSubmit={handleDelete}>
-                <div>
+            <div class = "formcontainer">
                     <label htmlFor="projectId">Project ID</label>
                     <input
                         type="text"

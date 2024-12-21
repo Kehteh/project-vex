@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Rubik:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* General Reset and Base Styling */
+header {
+    font-size: 3rem; /* Large text */
+    font-weight: bold; /* Bold text */
+    color: #2f4f2f; /* Dark green color */
+    text-align: center; /* Center align */
+    background: linear-gradient(90deg, #50c878, #a2d5ab); /* Gradient background */
+    background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make the gradient visible */
+    margin: 20px 0; /* Space around the h1 */
+    padding: 10px 0; /* Space inside the h1 */
+    border-bottom: 2px solid #50c878; /* Add a pastel green underline */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 2px; /* Add spacing between letters */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background-color: #eafaf1; /* Light pastel green background */
+    color: #2f4f2f; /* Darker green for text */
+    line-height: 1.6;
+    box-sizing: border-box;
+  }
+
+  /* General Styling for the Navbar */
+/* General Styling for the Navbar */
+.navbar {
+    background-color: #e9f1ec; /* Pastel green background */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+
+.buttons {
+    background-color: #d2ffe3; /* Pastel green background */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    list-style: none;
+    
+    justify-self: center;
+    align-items: center;
+    gap: 30px;
+    border-width: 10px;
+    padding: 10px;
+  }
+
+
+  
+  /* Mobile Responsive Navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+
+
+  
+  /* Container */
+  .formcontainer {
+    width: 40%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    display:flex;
+    flex-direction:column;
+    
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #2f4f2f; /* Darker green for headings */
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 1rem; /* Large text */
+    font-weight: bold; /* Bold text */
+    color: #2f4f2f; /* Dark green color */
+    text-align: center; /* Center align */
+    background: linear-gradient(90deg, #50c878, #a2d5ab); /* Gradient background */
+    background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Make the gradient visible */
+    margin: 20px 0; /* Space around the h1 */
+    padding: 10px 0; /* Space inside the h1 */
+    border-bottom: 2px solid #50c878; /* Add a pastel green underline */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 2px; /* Add spacing between letters */
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  /* Links */
+  a {
+    color: #50c878; /* Soft pastel green for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #2f4f2f; /* Dark green on hover */
+  }
+  
+  /* Buttons */
+  button {
+    padding: 10px 20px;
+    background-color: #50c878; /* Pastel green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2f4f2f; /* Dark green on hover */
+  }
+  
+  /* Inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="comment"],
+  input[type="integer"],
+  input[type="number"],
+  input[type="checkbox"],
+  input[type=boolean],
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #c7e6d8; /* Subtle green border */
+    border-radius: 5px;
+    background-color: #f3f9f5; /* Slightly lighter green */
+    font-size: 16px;
+  }
+  
+  input
+  textarea:focus {
+    border-color: #50c878;
+    outline: none;
+    box-shadow: 0 0 5px rgba(80, 200, 120, 0.5);
+  }
+
+  /* Links */
+
+  .Link {
+    padding: 10px 20px;
+    background-color: #50c878; /* Pastel green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Cards */
+  .ProjectCard {
+    background-color: #ffffff;
+    border: 1px solid #c7e6d8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #50c878;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
+  footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  

@@ -1,3 +1,5 @@
+import "../styles.css";
+
 import LoginForm from "../components/LoginForm";
 
 import useAuth from "../hooks/use-auth.js";

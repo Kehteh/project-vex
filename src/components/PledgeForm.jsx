@@ -56,7 +56,7 @@ function PledgeForm() {
   return (
     <form>
       <h2>Donate to a campaign!</h2>
-      <div>
+      <div class = "formcontainer">
         <label htmlFor="amount">Amount:</label>
         <input
           type="number"
@@ -66,7 +66,7 @@ function PledgeForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div class = "formcontainer">
         <label htmlFor="comment">Comment:</label>
         <input
           type="text"
@@ -76,7 +76,7 @@ function PledgeForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div class = "formcontainer">
         <label htmlFor="anonymous">Anonymous:</label>
         <input
           type="checkbox"

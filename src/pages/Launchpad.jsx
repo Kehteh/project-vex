@@ -1,4 +1,4 @@
-import "./styles/Launchpad.css";
+import "../styles.css";
 
 import CreateProject from "../components/LaunchpadForm";
 import UpdateProject from "../components/UpdateProjectForm";

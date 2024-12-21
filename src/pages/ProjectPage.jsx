@@ -1,7 +1,7 @@
+import "../styles.css";
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
 import PledgeForm from "../components/PledgeForm";
-import 'styles.css';
 
 
 function ProjectPage() {
@@ -23,7 +23,7 @@ function ProjectPage() {
          <div>
            <h2>{project.title}</h2>
            <h3>Created at: {project.date_created}</h3>
-           <h3>{`Status: ${project.is_open}`}</h3>
+           <h3>Is open? {`Status: ${project.is_open}`}</h3>
            <PledgeForm />
            <h2>Pledges:</h2>
            <ul>
