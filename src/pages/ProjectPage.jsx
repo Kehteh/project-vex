@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
+import PledgeForm from "../components/PledgeForm";
 
 function ProjectPage() {
 
@@ -21,7 +22,8 @@ function ProjectPage() {
            <h2>{project.title}</h2>
            <h3>Created at: {project.date_created}</h3>
            <h3>{`Status: ${project.is_open}`}</h3>
-           <h3>Pledges:</h3>
+           <PledgeForm />
+           <h2>Pledges:</h2>
            <ul>
                {project.pledges.map((pledgeData, key) => {
                      return (

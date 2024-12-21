@@ -1,50 +1,93 @@
-import React, { useState } from "react";
-import postPledge from "../api/post-pledge.js";
-import usePledge from "../hooks/use-pledge.js";
-import useAuth from "../hooks/use-auth.js";
+import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+import postPledge from "../api/post-pledge";
 
 function PledgeForm() {
-  const { user } = useAuth();
-  const [amount, setAmount] = useState("");
-  const [isAnonymous, setIsAnonymous] = useState(false);
-  const { submitPledge, isSubmitting, error } = usePledge(user);
+  const navigate = useNavigate();
+  const { id } = useParams();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const result = await submitPledge(amount, isAnonymous);
-    if (result) {
-      alert("Pledge successful!");
-      setAmount(""); // Clear the form after success
-      setIsAnonymous(false); // Reset anonymous toggle
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [pledgeDetails, setPledgeDetails] = useState({
+    amount: "",
+    comment: "",
+    anonymous: true,
+    project: id,
+  });
+
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setPledgeDetails((prevPledgeDetails) => ({
+      ...prevPledgeDetails,
+      [id]: value,
+    }));
+  };
+
+  console.log(pledgeDetails);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+    if (pledgeDetails.amount && pledgeDetails.project) {
+      postPledge(
+        pledgeDetails.comment,
+        pledgeDetails.amount,
+        pledgeDetails.anonymous,
+        pledgeDetails.project
+      )
+        .then((response) => {
+          console.log(response);
+          setPledgeDetails({
+            "comment": "",
+            "amount": "",
+            "anonymous": false,
+            "project": id,
+          });
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          window.alert(error.message);
+        });
     }
   };
 
-  if (!user) {
-    return <p>You need to be logged in to pledge. <a href="/login">Log in</a></p>;
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Amount:
+    <form>
+      <h2>Donate to a campaign!</h2>
+      <div>
+        <label htmlFor="amount">Amount:</label>
         <input
           type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          placeholder="Enter pledge amount"
-          required
+          id="amount"
+          placeholder="0"
+          value={pledgeDetails.amount}
+          onChange={handleChange}
         />
-      </label>
-      <label>
+      </div>
+      <div>
+        <label htmlFor="comment">Comment:</label>
+        <input
+          type="text"
+          id="comment"
+          placeholder="Comment"
+          value={pledgeDetails.comment}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="anonymous">Anonymous:</label>
         <input
           type="checkbox"
-          checked={isAnonymous}
-          onChange={(e) => setIsAnonymous(e.target.checked)}
+          id="anonymous"
+          onChange={handleChange}
+          value={true}
         />
-        Pledge anonymously
-      </label>
-      <button type="submit" disabled={isSubmitting}>Pledge</button>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
+      <button type="submit" onClick={handleSubmit} disabled={isLoading}>
+        {isLoading ? "Pledging..." : "Pledge"}
+      </button>
     </form>
   );
 }
