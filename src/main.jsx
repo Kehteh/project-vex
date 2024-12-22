@@ -3,15 +3,6 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles.css";
 
-// Import pages and components
-// Lazy-load pages
-// const HomePage = lazy(() => import("./pages/HomePage.jsx"));
-// const ProjectPage = lazy(() => import("./pages/ProjectPage.jsx"));
-// const LoginPage = lazy(() => import("./pages/LoginPage.jsx"));
-// const Launchpad = lazy(() => import("./pages/Launchpad.jsx"));
-// const CreateAccount = lazy(() => import("./pages/CreateAccount.jsx"));
-// const PledgePage = lazy(() => import("./pages/PledgePage.jsx"));
-
 import HomePage from "./pages/HomePage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";

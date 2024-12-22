@@ -1,66 +1,43 @@
 import { useState } from "react";
-import deleteProject from "../api/delete-project.js";
-import useAuth from "../hooks/use-auth.js";
+import { useParams, useNavigate } from "react-router-dom";
+
+import deleteProject from "../api/delete-project"; // Assuming API utility is available
 
 function DeleteProjectForm() {
-    const { user } = useAuth(); // Assuming useAuth provides user context
-    const [projectId, setProjectId] = useState(""); // State to store the project ID to delete
-    const [error, setError] = useState(null); // State to store any error message
-    const [isLoading, setIsLoading] = useState(false); // State to track if request is loading
-    const [successMessage, setSuccessMessage] = useState(""); // To store success messages
+  const navigate = useNavigate();
+  const { id } = useParams(); // Get the project ID from the URL
 
-    // Handle project deletion
-    const handleDelete = async (event) => {
-        event.preventDefault();
+  const [isLoading, setIsLoading] = useState(false); // State to manage loading status
 
-        if (!user) {
-            setError("You must be logged in to delete a project.");
-            return;
-        }
+  const handleDelete = (event) => {
+    event.preventDefault();
+    setIsLoading(true);
 
-        if (!projectId) {
-            setError("Project ID is required.");
-            return;
-        }
+    if (id) { // Ensure the project ID exists
+      deleteProject(id) // Call the delete function
+        .then(() => {
+          setIsLoading(false);
+          window.alert("Project deleted successfully."); // Notify user of success
+          navigate("/"); // Redirect to homepage or another page
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          window.alert(error.message); // Notify user of error
+        });
+    } else {
+      window.alert("Invalid project ID."); // Error if no project ID
+    }
+  };
 
-        setIsLoading(true); // Start loading state
-        setError(null); // Clear previous errors
-        setSuccessMessage(""); // Clear previous success messages
-
-        try {
-            await deleteProject(projectId); // Call the delete function
-            setSuccessMessage("Project deleted successfully!"); // On success, show success message
-            setProjectId(""); // Reset the project ID field
-        } catch (err) {
-            setError(err.message || "An error occurred while deleting the project."); // Set error message
-        } finally {
-            setIsLoading(false); // End loading state
-        }
-    };
-
-    return (
-        <div class = "formcontainer">
-            <h2>Delete a Campaign</h2>
-            <form onSubmit={handleDelete}>
-            <div class = "formcontainer">
-                    <label htmlFor="projectId">Project ID</label>
-                    <input
-                        type="text"
-                        id="projectId"
-                        value={projectId}
-                        onChange={(e) => setProjectId(e.target.value)}
-                        placeholder="Enter Project ID"
-                    />
-                </div>
-                <button type="submit" disabled={isLoading}>
-                    {isLoading ? "Deleting..." : "Delete Project"}
-                </button>
-            </form>
-
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-        </div>
-    );
+  return (
+    <form onSubmit={handleDelete}>
+      <h1>Delete Project</h1>
+      <p>Would you like to delete this campaign? This action cannot be undone, and I won't double check.</p>
+      <button type="submit" disabled={isLoading}>
+        {isLoading ? "Deleting..." : "Delete Project"}
+      </button>
+    </form>
+  );
 }
 
 export default DeleteProjectForm;
