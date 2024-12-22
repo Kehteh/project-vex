@@ -31,7 +31,7 @@ function DeleteProjectForm() {
 
   return (
     <form onSubmit={handleDelete}>
-      <h1>Delete Project</h1>
+      <h2>Delete Project</h2>
       <p>Would you like to delete this campaign? This action cannot be undone, and I won't double check.</p>
       <button type="submit" disabled={isLoading}>
         {isLoading ? "Deleting..." : "Delete Project"}

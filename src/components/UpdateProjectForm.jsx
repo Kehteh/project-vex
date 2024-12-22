@@ -262,9 +262,10 @@
     return (
       <form onSubmit={handleSubmit}>
         <div className="formcontainer">
-          <h2>Update a Campaign</h2>
+          <h2>Update your Campaign!</h2>
+          <h4>...psst! You need to both be the owner of this project and logged in to change it!</h4>
           
-          <label htmlFor="title">Campaign:</label>
+          <label htmlFor="title">Updated name:</label>
           <input
             type="text"
             id="title"

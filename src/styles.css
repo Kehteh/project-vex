@@ -134,20 +134,33 @@ img {
     border-bottom: 2px solid #50c878; /* Add a pastel green underline */
     text-transform: uppercase; /* Uppercase letters */
     letter-spacing: 2px; /* Add spacing between letters */
+    text-shadow: #190925
   }
   
   h2 {
     font-size: 2rem;
+    color:#190925
   }
   
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    color:#190925
+  }
+
+  h4 {
+    font-size: 1.0rem;
+    color:#190925
   }
   
+  h5 {
+    font-size: 2rem;
+    color:#190925    
+  }
+
   h2, h3, h4, h5, h6 {
-    color: #2f4f2f; /* Darker green for headings */
+
     font-weight: 700;
-    margin-bottom: 10px;
+    margin: 10px;
   }
 
 

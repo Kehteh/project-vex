@@ -13,6 +13,14 @@ function ProjectPage() {
       // useProject returns three pieces of info, so we need to grab them all here
       const { project, isLoading, error } = useProject(id);
 
+      const formatDate = (isoString) => {
+        const date = new Date(isoString);
+        const day = String(date.getDate()).padStart(2, "0"); // Ensure two digits
+        const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+      };
+
       if (isLoading) {
             return (<p>loading...</p>)
       }
@@ -24,8 +32,9 @@ function ProjectPage() {
    return (
          <div className="projectdeets">
            <h2>{project.title}</h2>
-           <h3>Created at: {project.date_created}</h3>
-           <h3>Is open? {`Status: ${project.is_open}`}</h3>
+           <h3>Created on: {formatDate(project.date_created)}</h3>
+           <h3>Is open for support? {project.is_open ? 'Yes' : 'No'}<br/></h3>
+           <h3>{project.description}</h3>
            <UpdateProject />
            <DeleteProject />
            <PledgeForm />
