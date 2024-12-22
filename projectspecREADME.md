@@ -51,3 +51,24 @@ Please include the following in your readme doc:
 - [X] A screenshot of the project creation form
 - [X] A screenshot of a project with pledges
 - [X] A screenshot of the resulting page when an unauthorized user attempts to edit a project (optional, depending on whether or not this functionality makes sense in your app!)
+
+## Link to deployed project:
+
+https://incomparable-babka-c5d0a4.netlify.app/
+
+##  homepage screenshot
+![A website homepage for a crowdfunding app called "Vexx". Various shades of green were used in the styling. There is also a weird looking fish called Veronica in the top right corner](./submission_images/vexxhomepage.png)
+
+##  pledge screenshot
+![A pledging form for a crowdfunding app called "Vexx". Various shades of green were used in the styling.](./submission_images/vexxpledge.png)
+
+##  create a project screenshot
+![A form for creating a project within a crowdfunding app called "Vexx". Various shades of green were used in the styling.](./submission_images/vexxxcreation.png)
+
+
+##  Unauthorised update attempt
+![A picture of the feedback of an unauthorised user trying to update a project within a crowdfunding app called "Vexx". Various shades of green were used in the styling.](./submission_images/vexxunauthedit.png)
+
+##  Unauthorised delete attempt
+![A picture of the feedback of an unauthorised user trying to delete a project within a crowdfunding app called "Vexx". Various shades of green were used in the styling.](./submission_images/vexxunauthdelete.png)
+
