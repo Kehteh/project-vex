@@ -22,7 +22,7 @@ function ProjectPage() {
       }
 
    return (
-         <div>
+         <div className="projectdeets">
            <h2>{project.title}</h2>
            <h3>Created at: {project.date_created}</h3>
            <h3>Is open? {`Status: ${project.is_open}`}</h3>

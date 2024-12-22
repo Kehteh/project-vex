@@ -16,6 +16,7 @@ header {
     letter-spacing: 2px; /* Add spacing between letters */
 }
 
+
 body {
     margin: 0;
     padding: 0;
@@ -25,12 +26,17 @@ body {
     color: #2f4f2f; /* Darker green for text */
     line-height: 1.6;
     box-sizing: border-box;
+    text-align: center;
+
+    
   }
 
-  /* General Styling for the Navbar */
+img {
+  size: 50%;
+}
 /* General Styling for the Navbar */
 .navbar {
-    background-color: #e9f1ec; /* Pastel green background */
+    background-color: #eafaf1; /* Pastel green background */
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
@@ -51,20 +57,20 @@ body {
     padding: 10px;
   }
 
-
-  
-  /* Mobile Responsive Navbar */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      text-align: center;
-    }
+  .projectdeets {
+    width: 40%;
+    max-width: 1200px;
+    border: #2f4f2f;
+    border-width: 3px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    display:flex;
+    flex-direction:column;    
   }
 
-
-
-  
-  /* Container */
+    /* Container */
   .formcontainer {
     width: 40%;
     max-width: 1200px;
@@ -76,14 +82,45 @@ body {
     flex-direction:column;
     
   }
+
+  .ProjectCard {
+    background-color: #ffffff;
+    border: 1px solid #c7e6d8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  
+  /* Mobile Responsive Navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+
+    .projectdeets {
+    flex-direction: column;
+    text-align: center;
+    }
+
+
+    .formcontainer {
+    flex-direction: column;
+    text-align: center;
+    
+    }
+}
+    
+    .img {
+      display:flex;
+      flex-direction: column;
+    }
   
   /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    color: #2f4f2f; /* Darker green for headings */
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  
+
   h1 {
     font-size: 1rem; /* Large text */
     font-weight: bold; /* Bold text */
@@ -107,7 +144,14 @@ body {
     font-size: 1.75rem;
   }
   
-  /* Links */
+  h2, h3, h4, h5, h6 {
+    color: #2f4f2f; /* Darker green for headings */
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+
+  /* Links in the navbar */
   a {
     color: #50c878; /* Soft pastel green for links */
     text-decoration: none;
@@ -135,14 +179,14 @@ body {
   }
   
   /* Inputs */
-  input[type="text"],
+  /* input[type="text"],
   input[type="email"],
   input[type="password"],
   input[type="comment"],
   input[type="integer"],
   input[type="number"],
   input[type="checkbox"],
-  input[type=boolean],
+  input[type=boolean], */
 
   textarea {
     width: 100%;
@@ -154,25 +198,6 @@ body {
     font-size: 16px;
   }
   
-  input
-  textarea:focus {
-    border-color: #50c878;
-    outline: none;
-    box-shadow: 0 0 5px rgba(80, 200, 120, 0.5);
-  }
-
-  /* Links */
-
-  .Link {
-    padding: 10px 20px;
-    background-color: #50c878; /* Pastel green button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
   
   /* Cards */
   .ProjectCard {
@@ -184,7 +209,7 @@ body {
     margin-bottom: 20px;
   }
   
-  /* Footer */
+  /* Footer
   footer {
     background-color: #50c878;
     color: white;
@@ -197,7 +222,7 @@ body {
     color: white;
     font-weight: bold;
     text-decoration: underline;
-  }
+  } */
   
   /* Utility Classes */
   .text-center {
